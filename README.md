@@ -9,6 +9,7 @@
 for shopfiy must set:
 
 SHOPIFY_API_KEY=
+
 SHOPIFY_API_SECRET=
 
 you can get more from https://github.com/osiset/laravel-shopify
@@ -42,19 +43,25 @@ location ~* ^(/install|/authenticate|/api) {
 
 and comment:
 
+```
 location / {
     rewrite ^ "/Users/train/.composer/vendor/laravel/valet/server.php" last;
 }
+```
 
 ## Start your local service
 
 go to backend folder:
 
+```
 php artisan serve
+```
 
 go to frontend folder:
 
+```
 yarn dev
+```
 
 ## Setup Shopify App on https://partners.shopify.com/
 
@@ -67,4 +74,11 @@ https://backend.test/
 Allowed redirection URL(s):
 
 https://backend.test/authenticate
+
 https://backend.test/accessToken
+
+## Test your app
+
+Click "Get shop info" button, to show the shop information on the app page.
+
+That's alll
