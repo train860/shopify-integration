@@ -30,7 +30,7 @@ const urlParams = new URLSearchParams(url.search);
 const host = urlParams.get("host") || "";
 const apiKey = "52b6e1a791723dc08f94af58c8d93e92";
 //get the host from backend
-const permissionUrl = "https://backend.test/?" + urlParams.toString();
+const permissionUrl = "/install?" + urlParams.toString();
 
 onMounted(() => {
   const shopifyApp = createApp({

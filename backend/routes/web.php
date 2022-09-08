@@ -19,5 +19,5 @@ Route::group([
     /**
      * this is important for app install
      */
-    $router->get('/', [IndexController::class, 'home'])->name('home');
+    $router->get('/install', [IndexController::class, 'home'])->name('home');
 });
