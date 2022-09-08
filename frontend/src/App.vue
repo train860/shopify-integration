@@ -28,19 +28,23 @@ const shopInfo = ref(null);
 const url = new URL(window.location.href);
 const urlParams = new URLSearchParams(url.search);
 const host = urlParams.get("host") || "";
+const embedded= urlParams.get("embedded") || "";
 const apiKey = "52b6e1a791723dc08f94af58c8d93e92";
 //get the host from backend
-const permissionUrl = "/install?" + urlParams.toString();
-
+const permissionUrl = "https://backend.test/install?" + urlParams.toString();
+console.log(permissionUrl);
 onMounted(() => {
   const shopifyApp = createApp({
-    apiKey: apiKey,
-    host,
-  });
-  if (!host) {
-    Redirect.create(shopifyApp).dispatch(Redirect.Action.REMOTE, permissionUrl);
+      apiKey: apiKey,
+      host,
+    });
+  if (!urlParams.get("s")) {
+    window.location.href = permissionUrl;
+    //Redirect.create(shopifyApp).dispatch(Redirect.Action.REMOTE, permissionUrl);
   } else {
+   
     window["app-bridge-app"] = shopifyApp;
+    console.log(222222)
   }
 });
 const handleShopInfo = () => {

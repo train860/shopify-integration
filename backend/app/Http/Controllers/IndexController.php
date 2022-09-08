@@ -16,6 +16,6 @@ class IndexController extends Controller
     public function home(Request $request)
     {
         $shop = Auth::user();
-        return Redirect::to('https://app.shopify.feelbang.com/?host='.$request->host);
+        return Redirect::to('https://backend.test/?s=1&host='.$request->host);
     }
 }
