@@ -42,9 +42,7 @@ onMounted(() => {
     window.location.href = permissionUrl;
     //Redirect.create(shopifyApp).dispatch(Redirect.Action.REMOTE, permissionUrl);
   } else {
-   
     window["app-bridge-app"] = shopifyApp;
-    console.log(222222)
   }
 });
 const handleShopInfo = () => {
